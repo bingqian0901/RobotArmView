@@ -1,0 +1,82 @@
+@import './variables.css';
+
+/* ===== Global Reset & Base ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: var(--s-font-size-base);
+  color: var(--s-text-primary);
+  background-color: var(--s-bg-primary);
+  transition: background-color 0.3s, color 0.3s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--s-text-secondary);
+  border-radius: 3px;
+}
+
+/* ===== Utility Classes ===== */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card {
+  background: var(--s-bg-card);
+  border-radius: var(--s-radius);
+  box-shadow: var(--s-shadow);
+  padding: 16px;
+}
+.card-lg {
+  background: var(--s-bg-card);
+  border-radius: var(--s-radius-lg);
+  box-shadow: var(--s-shadow-lg);
+  padding: 20px;
+}
+
+/* ===== Element Plus dark mode overrides for pro mode ===== */
+html.pro-mode .el-card,
+html.pro-mode .el-table,
+html.pro-mode .el-dialog,
+html.pro-mode .el-drawer,
+html.pro-mode .el-menu,
+html.pro-mode .el-select-dropdown,
+html.pro-mode .el-picker-panel {
+  --el-bg-color: var(--s-bg-card);
+  --el-text-color-primary: var(--s-text-primary);
+  --el-text-color-regular: var(--s-text-secondary);
+  --el-border-color: var(--s-border);
+}
